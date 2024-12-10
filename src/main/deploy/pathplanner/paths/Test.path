@@ -1,0 +1,97 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 2.0,
+        "y": 1.0
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 2.7905830293776654,
+        "y": 1.0
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 5.049776490423166,
+        "y": 1.0
+      },
+      "prevControl": {
+        "x": 4.874113942236443,
+        "y": 0.6792285196553272
+      },
+      "nextControl": {
+        "x": 5.127985404931831,
+        "y": 1.1428146724618147
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 5.049776490423166,
+        "y": 1.6043846067720653
+      },
+      "prevControl": {
+        "x": 5.330836567521921,
+        "y": 1.335035366219091
+      },
+      "nextControl": {
+        "x": 4.768716413324411,
+        "y": 1.8737338473250396
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 2.1103565174320065,
+        "y": 1.7097821356840999
+      },
+      "prevControl": {
+        "x": 3.869893455898466,
+        "y": 1.8605995875526533
+      },
+      "nextControl": {
+        "x": 1.7004772383296536,
+        "y": 1.6746496260467554
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 2.0,
+        "y": 1.0
+      },
+      "prevControl": {
+        "x": 1.4311279977766789,
+        "y": 1.276481183490184
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 4.5,
+    "maxAcceleration": 8.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": null,
+  "previewStartingState": null,
+  "useDefaultConstraints": true
+}

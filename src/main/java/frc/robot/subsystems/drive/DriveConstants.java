@@ -21,18 +21,20 @@ import frc.robot.util.swerve.ModuleLimits;
 
 /** All Constants Measured in Meters and Radians (m/s, m/s^2, rad/s, rad/s^2) */
 public final class DriveConstants {
+  public static final boolean shouldPrintZeros = false;
+
   public static final DriveConfig driveConfig =
       switch (Constants.getRobot()) {
         case SIMBOT, COMPBOT -> new DriveConfig(
-            Units.inchesToMeters(1.924510128130523), // Get from Wheel Radius Characterization
-            Units.inchesToMeters(18.625),
-            Units.inchesToMeters(18.625),
-            Units.inchesToMeters(30),
-            Units.inchesToMeters(30.75),
-            Units.feetToMeters(15.0), // CHARACTERIZATION GETS THESE 4 (I think)
-            Units.feetToMeters(75.0),
-            12.0,
-            6.0);
+            Units.inchesToMeters(1.9368816932422894), // Get from Wheel Radius Characterization
+            Units.inchesToMeters(18.625), // Track width X
+            Units.inchesToMeters(18.625), // Track width Y
+            Units.inchesToMeters(30), // Bumper width X
+            Units.inchesToMeters(30.75), // Bumper width Y
+            Units.feetToMeters(15.0), // Max Linear Velocity
+            Units.feetToMeters(75.0), // Max Linear Acceleration
+            12.0, // Max Angular Velocity
+            6.0); // Max Angular Acceleration
         case DEVBOT -> new DriveConfig(
             Units.inchesToMeters(0),
             Units.inchesToMeters(0),
@@ -59,7 +61,7 @@ public final class DriveConstants {
       switch (Constants.getRobot()) {
         case SIMBOT -> 50.0;
         case DEVBOT -> 100.0;
-        case COMPBOT -> 250.0;
+        case COMPBOT -> 150.0;
       };
 
   public static final Matrix<N3, N1> odometryStateStdDevs =
@@ -71,10 +73,10 @@ public final class DriveConstants {
   public static final ModuleConfig[] moduleConfigs =
       switch (Constants.getRobot()) {
         case COMPBOT -> new ModuleConfig[] {
-          new ModuleConfig(1, 2, 3, new Rotation2d(0.011), true),
-          new ModuleConfig(4, 5, 6, new Rotation2d(-3.140), true),
-          new ModuleConfig(7, 8, 9, new Rotation2d(0.021), true),
-          new ModuleConfig(10, 11, 12, new Rotation2d(3.128), true)
+          new ModuleConfig(1, 2, 3, new Rotation2d(-0.017), true),
+          new ModuleConfig(4, 5, 6, new Rotation2d(3.135), true),
+          new ModuleConfig(7, 8, 9, new Rotation2d(0.018), true),
+          new ModuleConfig(10, 11, 12, new Rotation2d(3.14), true)
         };
         case DEVBOT -> new ModuleConfig[] {
           new ModuleConfig(1, 2, 3, new Rotation2d(0), true),
@@ -93,8 +95,8 @@ public final class DriveConstants {
   public static final ModuleConstants moduleConstants =
       switch (Constants.getRobot()) {
         case COMPBOT -> new ModuleConstants(
-            5.60284, // Get these two from FeedForwardCharacterization
-            0.07320,
+            5.11103, // Get these two from FeedForwardCharacterization
+            0.08386,
             1.0 / DCMotor.getKrakenX60Foc(1).KtNMPerAmp, // A/(N*m)
             35.0,
             0.0,

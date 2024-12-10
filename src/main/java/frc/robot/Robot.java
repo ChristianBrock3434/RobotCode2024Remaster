@@ -7,6 +7,8 @@
 
 package frc.robot;
 
+import static frc.robot.Subsystems.limelightShooter;
+
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.RobotController;
 import edu.wpi.first.wpilibj.Threads;
@@ -14,6 +16,7 @@ import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import frc.robot.commands.limelight.SeedPoseEstimation;
 import frc.robot.util.Alert;
 import frc.robot.util.Alert.AlertType;
 import frc.robot.util.VirtualSubsystem;
@@ -90,8 +93,7 @@ public class Robot extends LoggedRobot {
     switch (Constants.getMode()) {
       case REAL:
         // Running on a real robot, log to a USB stick ("/U/logs")
-        // TODO: figure this out
-        // Logger.addDataReceiver(new WPILOGWriter());
+        Logger.addDataReceiver(new WPILOGWriter());
         Logger.addDataReceiver(new NT4Publisher());
         break;
 
@@ -226,6 +228,9 @@ public class Robot extends LoggedRobot {
       autoCommand.cancel();
     }
 
+    // new ZeroAngle().schedule();
+    limelightShooter.setDefaultCommand(new SeedPoseEstimation());
+
     teleStart = Timer.getFPGATimestamp();
   }
 
@@ -245,12 +250,4 @@ public class Robot extends LoggedRobot {
   /** This function is called periodically during test mode. */
   @Override
   public void testPeriodic() {}
-
-  /** This function is called once when the robot is first started up. */
-  @Override
-  public void simulationInit() {}
-
-  /** This function is called periodically whilst in simulation. */
-  @Override
-  public void simulationPeriodic() {}
 }

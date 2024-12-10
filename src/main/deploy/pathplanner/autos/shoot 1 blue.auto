@@ -2,10 +2,10 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 2.0,
-      "y": 7.0
+      "x": 1.2,
+      "y": 4.7
     },
-    "rotation": 180.0
+    "rotation": 150.0
   },
   "command": {
     "type": "sequential",
@@ -14,13 +14,13 @@
         {
           "type": "named",
           "data": {
-            "name": "Run Flywheel"
+            "name": "shoot1CloseBlue"
           }
         },
         {
           "type": "path",
           "data": {
-            "pathName": "Example Path"
+            "pathName": "shoot 1 blue mobility"
           }
         }
       ]
